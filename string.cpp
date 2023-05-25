@@ -1,4 +1,4 @@
-// Skeleton of the String Handling Project
+// Program to Reverse the String
 
 #include<iostream>
 using namespace std;
@@ -38,7 +38,29 @@ void String :: remove_character()
 
 void String :: reverse_string()
 {
+	int len=0;
+	char temp;
 
+	cout<<endl<<"Your Current String : "<<str<<endl;
+
+	while(str[len]!='\0') // Generating Length of the String
+	{
+		len++;
+	}
+
+	if(len%2!=0) // Converting length to even
+	{
+		len--;
+	}
+
+	for(int i=0;i<=len/2;i++) // Reversing the string
+	{
+		temp=str[i];
+		str[i]=str[len-i];
+		str[len-i]=temp;
+	}
+
+	cout<<endl<<"Your Modified String : "<<str<<endl;
 }
 
 int main()
