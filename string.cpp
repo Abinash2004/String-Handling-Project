@@ -1,4 +1,4 @@
-// Skeleton of the String Handling Project
+// Program for Adding a New Character to the String
 
 #include<iostream>
 using namespace std;
@@ -18,12 +18,44 @@ class String
 
 void String :: input_new_string()
 {
-
+	
 }
 
 void String :: add_character()
 {
+	cout<<endl<<"Yout Current String : "<<str<<"\n\n"; // Old String
 
+	char chr; 
+	int pos,len=0,check=0; 
+
+	cout<<"Enter the Character to Add : ";
+	cin>>chr; // character to add
+	cout<<"Enter the Position to Add : ";
+	cin>>pos; // Position to add
+
+	while(str[len]!='\0') // Generating Length of the string
+	{
+		if(len==pos)
+			check=1;
+		len++;
+	}
+
+	if(check==0)
+	{
+		cout<<"Invalid Position for the Character !"<<endl;
+	}
+	else
+	{
+		for(int i=len;i>=pos;i--)
+		{
+			str[i]=str[i-1];
+		}
+
+		str[len+1]='\0'; // end of the string
+		str[pos-1]=chr;  // adding the character
+
+		cout<<endl<<"Your Modified String : "<<str<<endl; // New String
+	}
 }
 
 void String :: replace_character()
