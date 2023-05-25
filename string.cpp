@@ -1,4 +1,4 @@
-// Skeleton of the String Handling Project
+// Program for Removing a Character from the String
 
 #include<iostream>
 using namespace std;
@@ -18,7 +18,7 @@ class String
 
 void String :: input_new_string()
 {
-
+	
 }
 
 void String :: add_character()
@@ -33,7 +33,36 @@ void String :: replace_character()
 
 void String :: remove_character()
 {
+	cout<<endl<<"Your Current String : "<<str<<"\n\n"; 
 
+	char chr;
+	int check=0;
+
+	cout<<"Enter the Character to be Removed : "; // Character to remove
+	cin>>chr;
+
+	for(int i=0;str[i]!='\0';i++)
+	{
+		if(str[i]==chr) // Finding the character
+		{
+			check=1;
+			for(int j=i;str[j]!='\0';j++)
+			{
+				str[j]=str[j+1]; // Removing the character
+			}
+			i--; // in case consecuting character occur
+		}
+	}
+
+	if(check==1) // Character removed successfully
+	{
+		cout<<endl<<"Your Modified String : "<<str<<endl;
+	}
+
+	else // Character not Found in the String
+	{
+		cout<<endl<<chr<<" Not Found in String !"<<endl;
+	}
 }
 
 void String :: reverse_string()
