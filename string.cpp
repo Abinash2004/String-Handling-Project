@@ -1,4 +1,4 @@
-// Skeleton of the String Handling Project
+// Program for Replacing a Character of the String
 
 #include<iostream>
 using namespace std;
@@ -18,7 +18,7 @@ class String
 
 void String :: input_new_string()
 {
-
+	
 }
 
 void String :: add_character()
@@ -28,7 +28,34 @@ void String :: add_character()
 
 void String :: replace_character()
 {
+	char chr1,chr2;
+	int check=0;
 
+	cout<<endl<<"Your Current String : "<<str<<"\n\n";
+
+	cout<<"Enter the Character to Replace : ";
+	cin>>chr1; // character to be replaced
+	cout<<"Enter the New Character in place of "<<chr1<<" : ";
+	cin>>chr2; // character to replace with
+
+	for(int j=0;str[j]!='\0';j++) // Finding the Character and Replacing it
+	{
+		if(str[j]==chr1)
+		{
+			check=1;
+			str[j]=chr2;
+		}
+	}
+
+	if(check==1) // Successfully Replacing the Character
+	{
+		cout<<endl<<"Your Modified String : "<<str<<endl;
+	}
+
+	else // If character not found in the String
+	{
+		cout<<endl<<chr1<<" Not Found in the String !"<<endl;
+	}
 }
 
 void String :: remove_character()
