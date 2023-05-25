@@ -1,4 +1,4 @@
-// Skeleton of the String Handling Project
+// Input of a New String
 
 #include<iostream>
 using namespace std;
@@ -16,9 +16,10 @@ class String
 		void reverse_string();
 };
 
-void String :: input_new_string()
+void String :: input_new_string() 
 {
-
+	cout<<"Enter the String : ";
+	cin>>str;
 }
 
 void String :: add_character()
